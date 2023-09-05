@@ -13,19 +13,3 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  app:
-    image: 'quay.io/${USER}/{{cookiecutter.project_name}}:latest'
-    ports:
-      - 8000:8000
-    environment:
-      - ACG_CONFIG=cdappconfig.json
-    depends_on:
-      database:
-        condition: service_healthy
-    restart: unless-stopped
-    healthcheck:
-      test: curl --fail http://localhost:8000/readyz || exit 1
-      interval: 5s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
