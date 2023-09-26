@@ -145,4 +145,4 @@ stop-db:
 	$(CONTAINER_ENGINE) stop $(APP_NAME)-db
 	$(CONTAINER_ENGINE) rm $(APP_NAME)-db
 oc_login:
-	oc login --token=${OC_LOGIN_TOKEN} --server=${OC_LOGIN_SERVER}
+	@oc login --token=${OC_LOGIN_TOKEN} --server=${OC_LOGIN_SERVER}
